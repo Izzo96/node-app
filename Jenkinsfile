@@ -11,6 +11,7 @@ pipeline {
     stage("build") {
       steps {
         sh '''
+          sudo apt install docker.io -y
           docker build -t abdelaziz1996/my-app:latest .
         '''
       }
