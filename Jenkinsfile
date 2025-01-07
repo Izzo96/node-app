@@ -1,8 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'ubuntu'
-    }
+  agent any
   }
   environment {
     DOCKERHUB_CREDENTIALS = credentials('abdelaziz1996-dockerhub')
