@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage("build") {
       steps {
-        sh 'echo "Hello World"'
+        sh 'docker build -t abdelaziz1996/my-app:latest .'
       }
     }
     stage("login") {
