@@ -1,8 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'ubuntu'
-    }
+  agent any
   }
   environment {
     DOCKERHUB_CREDENTIALS = credentials('abdelaziz1996-dockerhub')
@@ -10,11 +7,7 @@ pipeline {
   stages {
     stage("build") {
       steps {
-        sh '''
-          apt update
-          apt install docker.io
-          docker build -t abdelaziz1996/my-app:latest .
-        '''
+        sh 'docker build -t abdelaziz1996/my-app:latest .'
       }
     }
     stage("login") {
